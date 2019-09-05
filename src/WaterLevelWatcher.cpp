@@ -189,6 +189,32 @@ void WaterLevelWatcher::setUrl(char *url)
 }
 
 /**
+ * @fn char *WaterLevelWatcher::getDeviceName(void)
+ * @brief 수위 체크가 제어하는 디바이스 이름 가져오기
+ * @return 수위 체크가 제어하는 디바이스 이름 
+ * @date 2019-08-27
+ * @author Janghun Lee (jhlee@sangsang.farm)
+ */
+char *WaterLevelWatcher::getDeviceName(void)
+{
+  return _water_level_watcher_data.device_name;
+}
+
+/**
+ * @fn void WaterLevelWatcher::setOutlet(int outlet)
+ * @brief 수위 체크가 제어하는 디바이스 이름 설정
+ * @param outlet 수위 체크가 제어하는 디바이스 이름
+ * @return void
+ * @date 2019-08-27
+ * @author Janghun Lee (jhlee@sangsang.farm)
+ */
+void WaterLevelWatcher::setDeviceName(char *device_name)
+{
+  memset(_water_level_watcher_data.device_name, 0, sizeof(_water_level_watcher_data.device_name));
+  memcpy(_water_level_watcher_data.device_name, device_name, strlen(device_name) + 1);
+}
+
+/**
  * @fn int WaterLevelWatcher::getOutlet(void)
  * @brief 수위 체크가 제어하는 콘센트 가져오기
  * @return 수위 체크가 제어하는 콘센트 번호

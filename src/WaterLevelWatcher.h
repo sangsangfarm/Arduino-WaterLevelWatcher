@@ -71,6 +71,8 @@ struct WATER_LEVEL_WATCHER_DATA
   /** 초음파 센서 데이터 URL */
   char url[128];
   /** 제어할 콘센트 번호 */
+  char device_name[20];
+  /** 제어할 콘센트 번호 */
   int outlet;
 };
 
@@ -97,8 +99,12 @@ public:
 
   bool getPower(void);
   void setPower(bool power);
+
   char *getUrl(void);
   void setUrl(char *url);
+
+  char *getDeviceName(void);
+  void setDeviceName(char *device_name);
 
   int getOutlet(void);
   void setOutlet(int outlet);
