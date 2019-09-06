@@ -28,7 +28,7 @@ WaterLevelWatcher::WaterLevelWatcher(void)
 void WaterLevelWatcher::watch(void)
 {
   printf("[WaterLevelWatcher] 전원 상태 : %s\n", _water_level_watcher_data.power ? "켜짐" : "꺼짐");
-  if (!_water_level_watcher_data.power || strncmp(_water_level_watcher_data.url, "", sizeof("")) == 0)
+  if (!_water_level_watcher_data.power || strncmp(_water_level_watcher_data.url, "", sizeof("")) == 0 || _water_level_watcher_data.outlet == -1)
   {
     _water_level_change_flag = false;
     return;
