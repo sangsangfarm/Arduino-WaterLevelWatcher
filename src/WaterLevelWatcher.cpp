@@ -37,7 +37,7 @@ void WaterLevelWatcher::watch(void)
   HTTPClient http;
   String url = String(_water_level_watcher_data.url);
   http.begin(url);
-  http.setConnectTimeout(500);
+  http.setConnectTimeout(1000);
   println(url);
   http.addHeader("Content-Type", "application/json");
   int http_code = http.GET();
